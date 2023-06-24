@@ -1,0 +1,132 @@
+
+:root {
+  --bg-color: #1f242d;
+  --text-color: #fff;
+  --main-color: #0718c4;
+}
+
+#form__container {
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  background-color: var(--bg-color);
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+#lobby__form {
+  padding: 2em;
+  border: 1px solid #ebe0e0;  
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
+  height: 427px;
+  transition: 0.5s;
+}
+
+#form__container__header {
+  border-radius: 10px 10px 0 0;
+  border: 1px solid #ebe0e0;  
+  border-bottom: 0px;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--main-color);
+  margin: 0;
+  color: white;
+  font-size: 18px;
+  font-size: 300;
+  line-height: 0;
+  font-weight: 800;
+}
+
+.form__field__wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.form__field__wrapper label {
+  font-size: 14px;
+  line-height: 1.7em;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.form__field__wrapper input {
+  box-sizing: border-box;
+  color: black;
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-radius: 5px;
+  padding: 16px 20px;
+  font-size: 15px;
+  background-color: #ebe0e0;
+}
+
+.form__field__wrapper button[type='submit'] {
+  margin-top: 32px;
+  cursor: pointer;
+  background-color: var(--main-color);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 5px;
+  gap: 10px;
+}
+
+.form__field__wrapper button[type='submit'] svg {
+  fill: #ede0e0;
+  width: 20px;
+}
+
+#or_span {
+  position: relative;
+  left: 47%;
+  bottom: -20px;
+  font-size: 16px;
+  background-color: var(--bg-color);
+  padding: 5px;
+  transform: translateX(-50%);
+}
+
+#lobby_generate_room_id_btn {
+  margin-top: 32px;
+  cursor: pointer;
+  background-color: var(--main-color);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 5px;
+  gap: 10px;
+  fill: #ede0e0;
+}
+
+#copyText {
+  position: relative;
+  bottom: -100px;
+  display: inline-block;
+  transition: 0.5s;
+  cursor: pointer;
+  background-color: var(--main-color);
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #ede0e0;
+  height: 50px;
+  border-radius: 5px;
+}
