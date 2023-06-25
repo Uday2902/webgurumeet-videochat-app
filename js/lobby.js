@@ -13,7 +13,20 @@ form.addEventListener('submit', (e)=>{
 
     let inviteCode = e.target.room.value;
     if(!inviteCode){
-        inviteCode = String(Math.floor(Math.random()*10000));
+        let string = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+            inviteCode = '';
+
+            for(let i = 0; i < 3; i++){
+
+                let index1 = Math.floor(Math.random()*61 + 0);
+                let index2 = Math.floor(Math.random()*61 + 0);
+                let index3 = Math.floor(Math.random()*61 + 0);
+                if(i != 2){
+                    inviteCode += `${string[index1]}${string[index2]}${string[index3]}-`;
+                }else{
+                    inviteCode += `${string[index1]}${string[index2]}${string[index3]}`;
+                }
+            }
     }
     window.location = `index.html?room=${inviteCode}`;
 
