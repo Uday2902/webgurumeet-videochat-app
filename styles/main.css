@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -95,7 +95,7 @@ a {
 #nav__links {
   display: flex;
   align-items: center;
-  column-gap: 2em;
+  column-gap: 1em;
 }
 
 .nav__link {
@@ -109,7 +109,7 @@ a {
 
 @media (max-width: 520px) {
   #nav__links {
-    column-gap: 3em;
+    column-gap: 1em;
   }
 }
 
@@ -119,16 +119,17 @@ a {
   border-color: var(--main-color);
 }
 
-#create__room__btn {
+#copy_meeting_link {
   display: block;
   background-color: var(--main-color);
   padding: 8px 24px;
   font-size: 14px;
   font-weight: 500;
   border-radius: 5px;
+  cursor: pointer;
 }
 
-#create__room__btn:hover {
+#copy_meeting_link:hover {
   background-color: var(--main-color);
 }
 
@@ -167,18 +168,18 @@ a {
     height: 1.5rem;
   }
   .nav__link,
-  #create__room__btn {
+  #copy_meeting_link {
     font-size: 0;
     border: none;
   }
 
-  #create__room__btn {
+  #copy_meeting_link {
     padding: 0;
     background-color: transparent;
     border-radius: 50%;
   }
 
-  #create__room__btn:hover {
+  #copy_meeting_link:hover {
     background-color: transparent;
   }
 }

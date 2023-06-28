@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -8,23 +9,15 @@
     <link rel='stylesheet' type='text/css' media='screen' href='styles/main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='styles/lobby.css'>
 </head>
+
 <body>
 
-        <header id="nav">
-       <div class="nav--list">
-            <a href="lobby.html"/>
-                <h3 id="logo">
-                    <img src="./images/logo.png" alt="Site Logo">
-                </h3>
-            </a>
-       </div>
-
-        <div id="nav__links">
-            <a class="nav__link" href="lobby.html">
-                Lobby
-            </a>
-            <a class="nav__link" id="create__room__btn" href="lobby.html">
-                Create Room
+    <header id="nav">
+        <div class="nav--list">
+            <a href="lobby.html" />
+            <h3 id="logo">
+                <img src="./images/logo.png" alt="Site Logo">
+            </h3>
             </a>
         </div>
     </header>
@@ -34,34 +27,37 @@
             <div id="form__container__header">
                 <p>👋 Create or Join Room</p>
             </div>
-            
-            
+
             <form id="lobby__form">
-                
+
                 <div class="form__field__wrapper">
                     <label>Your Name</label>
                     <input type="text" name="name" required placeholder="Enter your display name..." />
                 </div>
-                
-                <div class="form__field__wrapper">
+
+                <div class="form__field__wrapper" id="room_id_field">
                     <label>Room ID</label>
                     <input type="text" name="room" id="lobby_room_id_btn" required placeholder="Enter room ID..." />
                 </div>
                 <span id="or_span">or</span>
                 <hr>
-                <div class="form__field__wrapper">
+                <div class="form__field__wrapper" id="generate_field">
                     <div id="lobby_generate_room_id_btn">Generate unique roomID</div>
                 </div>
                 <div class="form__field__wrapper">
-                    <button type="submit" id="lobby_submit_btn">Go to Room 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
+                    <button type="submit" id="lobby_submit_btn">Go to Room
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" />
+                        </svg>
                     </button>
                 </div>
                 <div id="copyText">RoomID copied to clipboard</div>
             </form>
         </div>
-     </main>
-    
+    </main>
+
 </body>
-<script type="text/javascript" src="js/lobby.js"></script>
+<script type="text/javascript" src="./js/lobby.js"></script>
+
 </html>

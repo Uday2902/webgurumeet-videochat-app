@@ -1,18 +1,18 @@
 let handleMemberJoined = async (MemberId) => {
-    alert("Hello joined first")
+
     console.log("New Member has joined the room : ", MemberId);
-    addMemberToDom(MemberId); 
+    addMemberToDom(MemberId);
 
     let members = await channel.getMembers();
     updateMemberTotal(members);
 
-    let {name} = await rtmClient.getUserAttributesByKeys(MemberId, ['name'])
+    let { name } = await rtmClient.getUserAttributesByKeys(MemberId, ['name'])
     addBotMessageToDom(`Welcome to the room ${name}! 👋`);
 }
 
 let addMemberToDom = async (MemberId) => {
 
-    let {name} = await rtmClient.getUserAttributesByKeys(MemberId, ['name']);
+    let { name } = await rtmClient.getUserAttributesByKeys(MemberId, ['name']);
 
     let memberWrapper = document.getElementById('member__list');
     let memberItem = `<div class="member__wrapper" id="member__${MemberId}__wrapper">
@@ -45,9 +45,9 @@ let removeMemberFromDom = async (MemberId) => {
 
 let getMembers = async () => {
     let members = await channel.getMembers();
-    
+
     updateMemberTotal(members);
-    for(let i = 0; i < members.length; i++){
+    for (let i = 0; i < members.length; i++) {
         addMemberToDom(members[i]);
     }
 }
@@ -55,13 +55,13 @@ let getMembers = async () => {
 let handleChannelMessage = async (messageData, MemberId) => {
     console.log("A new message was recieved")
     let data = JSON.parse(messageData.text);
-    if(data.type === 'chat'){
+    if (data.type === 'chat') {
         addMessageToDom(data.displayName, data.message);
     }
 
-    if(data.type === 'user-left'){
+    if (data.type === 'user-left') {
         document.getElementById(`user-container-${data.uid}`).remove();
-        for(let i = 0; i < videoFrames.length; i++){
+        for (let i = 0; i < videoFrames.length; i++) {
             videoFrames[i].style.height = '300px';
             videoFrames[i].style.width = '300px';
         }
@@ -72,7 +72,7 @@ let sendMessage = async (e) => {
     e.preventDefault();
 
     let message = e.target.message.value;
-    await channel.sendMessage({text: JSON.stringify({'type': 'chat', 'message': message, 'displayName': displayName})});
+    await channel.sendMessage({ text: JSON.stringify({ 'type': 'chat', 'message': message, 'displayName': displayName }) });
     addMessageToDom(displayName, message);
     e.target.reset();
 }
@@ -87,7 +87,7 @@ let addMessageToDom = (name, message) => {
                       </div>`;
     messagesWrapper.insertAdjacentHTML('beforeend', newMessage);
     let lastMessage = document.querySelector('#messages .message__wrapper:last-child');
-    if(lastMessage){
+    if (lastMessage) {
         lastMessage.scrollIntoView();
     }
 }
@@ -102,7 +102,7 @@ let addBotMessageToDom = (botMessage) => {
                       </div>`;
     messagesWrapper.insertAdjacentHTML('beforeend', newMessage);
     let lastMessage = document.querySelector('#messages .message__wrapper:last-child');
-    if(lastMessage){
+    if (lastMessage) {
         lastMessage.scrollIntoView();
     }
 }
